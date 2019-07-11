@@ -8,8 +8,9 @@ import java.util.stream.IntStream;
 
 public class CollectionOperator {
     public List<Integer> getListByInterval(int left, int right) {
+        return (left>right)?IntStream.rangeClosed(right,left).boxed().collect(Collectors.toList()) :
+                IntStream.rangeClosed(left,right).boxed().collect(Collectors.toList());
 
-        throw new NotImplementedException();
     }
 
     public List<Integer> getEvenListByIntervals(int left, int right) {
